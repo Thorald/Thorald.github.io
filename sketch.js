@@ -21,9 +21,9 @@ function setup() {
   sliderPOSTERIZE.style('width', '80px');
 
   //slider Sofus
-  sliderHueRotation = createSlider(2, 100, 100)
-  sliderHueRotation.position(700,500);
-  sliderHueRotation.style('width', '80px');
+  sliderThreshold = createSlider(2, 100, 100)
+  sliderThreshold.position(700,500);
+  sliderThreshold.style('width', '80px');
 
   //button invert
   button = createButton('Invert Colours');
@@ -72,11 +72,25 @@ function draw() {
   //pixel posturize
   let val2 = sliderPOSTERIZE.value();
   img.filter(POSTERIZE,val2);
+  
+  //pixel threshold
+  
 
   image(img, 200, 200);
+
   textSize(32);
   textStyle(BOLDITALIC);
   text('Filter-Filtret™', 340, 175);
+
+  textSize(15);
+  text('resolution', 700, 285);
+
+  textSize(15);
+  text('posturize', 700, 385);
+  
+  textSize(15);
+  text('lil somn somn', 700, 485);
+
 }
 
 /*
@@ -86,7 +100,6 @@ test
 what's good?
 
 */
-
 
 
 
