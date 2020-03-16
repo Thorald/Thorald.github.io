@@ -10,43 +10,39 @@ let button;
 function setup() {
   createCanvas(1080,1920);
 
-  //Title
-  textSize(100);
-  text('The Filter Filter', 540, 20);
-
   //slider density
   sliderBlur = createSlider(1, 100, 100);
-  sliderBlur.position(1200,400);
+  sliderBlur.position(700,300);
   sliderBlur.style('width', '80px');
 
   //slider POSTERIZE
   sliderPOSTERIZE = createSlider(0, 100, 100);
-  sliderPOSTERIZE.position(1200, 450);
+  sliderPOSTERIZE.position(700, 400);
   sliderPOSTERIZE.style('width', '80px');
 
   //slider Sofus
   sliderHueRotation = createSlider(2, 100, 100)
-  sliderHueRotation.position(1200,500);
+  sliderHueRotation.position(700,500);
   sliderHueRotation.style('width', '80px');
 
   //button invert
   button = createButton('Invert Colours');
-  button.position(350, 400);
+  button.position(90, 400);
   button.mousePressed(invertimage);
 
   //button erode
   button = createButton('Erode Image');
-  button.position(350, 450);
+  button.position(90, 450);
   button.mousePressed(erode);
 
   //button shadow
   button = createButton('Blur');
-  button.position(350, 500);
+  button.position(90, 500);
   button.mousePressed(dropShadow);
 
   //button GreyScale
   button = createButton('Greyscale');
-  button.position(350, 550);
+  button.position(90, 550);
   button.mousePressed(greyScale);
 
 }
@@ -77,11 +73,17 @@ function draw() {
   let val2 = sliderPOSTERIZE.value();
   img.filter(POSTERIZE,val2);
 
-  image(img, 540, 200);
+  image(img, 200, 200);
+  textSize(32);
+  textStyle(BOLDITALIC);
+  text('Filter-Filtret™', 340, 175);
 }
+
 /*
 Bruh
  hello?
+test
+what's good?
 
 */
 
