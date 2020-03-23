@@ -8,7 +8,7 @@ let slider;
 let button;
 
 function setup() {
-  createCanvas(1080,1920);
+  createCanvas(1080,850);
 
   //slider density
   sliderBlur = createSlider(1, 100, 100);
@@ -16,12 +16,12 @@ function setup() {
   sliderBlur.style('width', '80px');
 
   //slider POSTERIZE
-  sliderPOSTERIZE = createSlider(0, 100, 100);
+  sliderPOSTERIZE = createSlider(10, 100, 100);
   sliderPOSTERIZE.position(700, 400);
   sliderPOSTERIZE.style('width', '80px');
 
-  //slider Sofus
-  sliderThreshold = createSlider(2, 100, 100)
+  //slider Threshold
+  sliderThreshold = createSlider(0, 100, 0)
   sliderThreshold.position(700,500);
   sliderThreshold.style('width', '80px');
 
@@ -44,8 +44,42 @@ function setup() {
   button = createButton('Greyscale');
   button.position(90, 550);
   button.mousePressed(greyScale);
+  
+  
+  //button dilate
+  button = createButton('Dilate Image');
+  button.position(90, 350);
+  button.mousePressed(dilate);
 
+   //button saveImg
+   button = createButton('Save');
+   button.position(90, 700);
+   button.mousePressed(SAVE);
+
+    //button thresh
+    button = createButton('Threshold');
+    button.position(90, 600);
+    button.mousePressed(Thresh);
+
+  
+  /*
+  button = createButton('restart');
+  button.position(500, 550);
+  button.mousePressed(resetSketch);
+  */
 }
+
+function SAVE() {
+  saveCanvas('myCanvas', 'giraf.jpg');
+}
+function dilate() {
+  img.filter(DILATE)
+}
+
+function Thresh() {
+  img.filter(THRESHOLD,0.5);
+}
+
 
 function invertimage() {
   img.filter(INVERT)
@@ -75,7 +109,6 @@ function draw() {
   
   //pixel threshold
   
-
   image(img, 200, 200);
 
   textSize(32);
@@ -90,7 +123,6 @@ function draw() {
   
   textSize(15);
   text('lil somn somn', 700, 485);
-
 }
 
 /*
@@ -98,8 +130,5 @@ Bruh
  hello?
 test
 what's good?
-
+alkdsjfalk
 */
-
-
-
